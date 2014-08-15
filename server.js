@@ -59,7 +59,18 @@ io.on("connection", function (socket) {
 	
 	socket.on("click", function(clickEvent){
 		console.log("clicked!", clickEvent);
+		io.sockets.emit("command-click", clickEvent);
 	});
+
+	socket.on("keyup", function (keyupEvent) {
+		console.log("pressed!", keyupEvent);
+		io.sockets.emit("command-keyup", keyupEvent);
+	});
+
+	socket.on("change", function (changeEvent) {
+		console.log("changed!", changeEvent);
+		io.sockets.emit("command-change", changeEvent);
+	})
 
 
 });
