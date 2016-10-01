@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IO Sync</title>
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<h2 style="text-align: center">Synchronized events can help control/debug mobile web applicationss.</h2>  
+
+
+<form autocomplete="off" onSubmit="return false;">
+  <div id="input_wrapper">
+    <p>
+      <label for="login">Login</label>
+      <i class="icon icon-user icon-large"></i>
+      <input type="text" name="login12345" id="login" placeholder="Login here" io-change="username">
+      
+    </p>
+    <p>
+      <label for="pass">Password</label>
+       <i class="icon icon-lock icon-large"></i>
+      <input type="search" name="pass12345" id="pass" placeholder="Password here" io-change="password" autocomplete="off">
+     
+    </p>
+
+    <p id="output"></p>
+  </div>
+  <p>
+    <button id="log-in" name="log-in" io-click="login">Log in</button>
+    <button id="register" name="register" io-click="register" >Register</button>
+  </p>
+</form>
+
+<script src="/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
